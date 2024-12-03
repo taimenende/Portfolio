@@ -1,0 +1,258 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Poppins:wght@500;600&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.dark-mode{
+    background-color: #13131F;
+    color: white;
+}
+
+.light-mode{
+    background-color: #faf7dfdf;
+}
+
+#theme-toggle {
+    cursor: pointer;
+    font-size: 1.5rem;
+}
+
+/* HEADER */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    color: white;
+    position: relative;
+    margin-top: 10px;
+}
+
+header::after { /* Pseudoelement  */
+    content: ""; 
+    position: absolute; 
+    bottom: 0; 
+    left: 0;
+    width: 100%; 
+    height: 2px; 
+    background: linear-gradient(to right, transparent, #c9c90a, transparent); 
+}
+
+header h2 a {
+    color: white;
+    font-size: 24pt;
+    font-family: 'Poppins';
+    font-weight: bold;
+}
+
+.light-mode header h2 a{
+    color: #13131F;
+}
+
+header h2 a:hover {
+    color: #FFDB58;
+}
+
+.light-mode header h2 a:hover{
+    color: #5841ee;
+}
+
+/* NAV */
+nav .nav {
+    display: flex;
+    gap: 17px;
+    margin-left: 400px;
+}
+
+nav .nav-item .nav-link {
+    text-decoration: none;
+    color: whitesmoke;
+    font-size: 18pt;
+    font-family: 'Major Mono Display';
+}
+
+.light-mode 
+nav .nav-item .nav-link{
+    color: #13131F;
+    font-weight: bold;
+}
+
+
+nav .nav-item .nav-link:hover {
+    color: #FFDB58;
+    font-weight: bold;
+}
+
+.light-mode .nav-item .nav-link:hover {
+    color: #5841ee;
+}
+
+
+/* HAMBURGER MENU */
+.menu-toggle{
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+}
+
+.menu-toggle span{
+    width: 25px;
+    height: 2px;
+    background-color: whitesmoke;
+}
+
+@media (max-width: 768px){
+    .menu-toggle{
+        display: flex;
+    }
+    nav .nav{
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        background-color: #FFDB58;
+        border-radius: 5px;
+        padding: 10px 0;
+        width: 200px;
+        z-index: 1000;
+    }
+    nav .nav.active{
+        display: flex;
+    }
+    nav .nav-item{
+        text-align: center;
+    }
+    nav .nav-item .nav-link{
+        font-size: 16pt;
+        padding: 10px 0;
+    }
+}
+
+/* MAIN */
+main {
+    font-family: 'Poppins', sans-serif;
+    padding: 40px 0;
+    color: #E1DBDB;
+    text-align: center;
+    padding: 20px;
+}
+
+#content {
+    width: auto;
+    max-width: 1200px;
+    text-align: left;
+    padding-top: 80px;
+    margin: 0 auto;
+    padding-left: 20px;
+}
+
+#textAbout{
+    width: 60%;
+}
+
+#content h1{
+    font-size: 80px;
+}
+
+
+.light-mode #content h1{
+    color: #13131F;
+}
+
+.wave-hand-icon{
+    width: 4rem;
+    height: 4rem;
+    vertical-align: baseline;
+}
+
+#content .name-text{
+    font-size: 42px;
+    color: #FFDB58;
+}
+
+.light-mode #content .name-text{
+    color:#5841ee;
+}
+
+
+#content .description-text{
+    font-size: 28px;
+    color: #E1DBDB;
+    margin-top: 10px;
+}
+
+.light-mode #content .description-text{
+    color: #13131F;
+}
+
+.social-links{
+    display: flex;
+    justify-content: flex-start;
+    gap: 10px;
+    margin-top: 20px;
+    width: auto;
+    max-width: 1200px;
+    text-align: left;
+}
+
+.social-icon svg{
+    width: 40px;
+    height: 30px;
+    transition: transform 0.3s ease;
+}
+
+body.light-mode svg {
+    color: black; 
+}
+
+body.dark-mode svg {
+    color: white; 
+}
+
+
+.social-icon:hover{
+    transform: scale(1.2);
+}
+
+
+.photo-container{
+    width: 40%;
+    justify-content: center;
+}
+
+.profile-photo{
+    width: 50%;
+    border-radius: 150px 100px 50px 100px;
+    object-fit: cover;
+    box-shadow: 0 4px 6px #010101;
+}
+
+.profile-photo:hover {
+    animation: bounce 0.8s ease;
+}
+
+@keyframes bounce {
+    0% { transform: translateY(0); }
+    25% { transform: translateY(-9px); }
+    50% { transform: translateY(0); }
+    75% { transform: translateY(-6px); }
+    100% { transform: translateY(0); }
+}
+
+/* FOOTER */
+footer {
+    height: 20px;
+    color: #6161e6;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 12px;
+}

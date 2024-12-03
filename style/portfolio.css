@@ -1,0 +1,248 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Poppins:wght@500;600&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body{
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.dark-mode{
+    background-color: #13131F;
+    color: white;
+}
+
+.light-mode{
+    background-color: #faf7dfdf;
+}
+
+#theme-toggle {
+    cursor: pointer;
+    font-size: 1.5rem;
+}
+
+/* HEADER */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    color: white;
+    position: relative;
+    margin-top: 10px;
+}
+
+header::after { /* Pseudoelement  */
+    content: ""; 
+    position: absolute; 
+    bottom: 0; 
+    left: 0;
+    width: 100%; 
+    height: 2px; 
+    background: linear-gradient(to right, transparent, #c9c90a, transparent); 
+}
+
+
+header h2 a {
+    color: white;
+    font-size: 24pt;
+    font-family: 'Poppins';
+    font-weight: bold;
+}
+
+.light-mode header h2 a{
+    color: #13131F;
+}
+
+header h2 a:hover {
+    color: #FFDB58;
+}
+
+.light-mode header h2 a:hover{
+    color: #5841ee;
+}
+
+/* NAV */
+nav .nav {
+    display: flex;
+    gap: 17px;
+    margin-left: 400px;  
+
+}
+
+nav .nav-item .nav-link {
+    text-decoration: none;
+    color: whitesmoke;
+    font-size: 18pt;
+    font-family: 'Major Mono Display';
+}
+
+.light-mode 
+nav .nav-item .nav-link{
+    color: #13131F;
+    font-weight: bold;
+}
+
+
+nav .nav-item .nav-link:hover {
+    color: #FFDB58;
+    font-weight: bold;
+}
+
+.light-mode .nav-item .nav-link:hover {
+    color: #5841ee;
+}
+
+/* HAMBURGER MENU */
+.menu-toggle{
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+}
+
+.menu-toggle span{
+    width: 25px;
+    height: 2px;
+    background-color: whitesmoke;
+}
+
+@media (max-width: 768px){
+    .menu-toggle{
+        display: flex;
+    }
+    nav .nav{
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        background-color: #FFDB58;
+        border-radius: 5px;
+        padding: 10px 0;
+        width: 200px;
+        z-index: 1000;
+    }
+    nav .nav.active{
+        display: flex;
+    }
+    nav .nav-item{
+        text-align: center;
+    }
+    nav .nav-item .nav-link{
+        font-size: 16pt;
+        padding: 10px 0;
+    }
+}
+
+/* MAIN */
+main {
+    padding: 40px 0;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    font-family: 'Poppins', sans-serif;
+}
+
+#content, .projects {
+    width: auto;
+    max-width: 1200px;
+    text-align: left;
+    margin-top: 80px;
+}
+
+#content h1 {
+    font-size: 70px;
+    color: #FFDB58;
+}
+
+.light-mode #content h1{
+    color: #5841ee;
+}
+
+.light-mode #content p{
+    color:#13131F;
+}
+
+.projects {
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: space-between; 
+    gap: 20px; 
+}
+
+.projects .d-flex { /* each project */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%; 
+    max-width: 550px; 
+    margin-bottom: 30px;
+}
+
+
+.projects .d-flex img {
+    width: 100%; 
+    max-width: 420px; 
+    height: auto; 
+    object-fit: contain; /* keeping the proportion */
+    margin-bottom: 15px; 
+}
+
+.project-description {
+    font-size: 20px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.light-mode .project-description{
+    color: #13131F;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-around;
+    gap: 10px;
+    width: 100%;
+}
+
+.button { /*each button */
+    font-family: 'Poppins', sans-serif;
+    color: #FFDB58;
+    background-color: #13131F;
+    border: 2px solid #FFDB58;
+    border-radius: 5px;
+    text-decoration: none;
+    padding: 10px 20px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.button:hover {
+    color: #13131F;
+    background-color: #FFDB58;
+    border-color: white;
+}
+
+.button:hover svg{
+    fill: #FFDB58;
+}
+
+.button svg {
+    margin-right: 5px; 
+    margin-left: 10px;
+}
+
+
+footer{
+    height: 20px;
+    color: #6161e6;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 12px;
+}
